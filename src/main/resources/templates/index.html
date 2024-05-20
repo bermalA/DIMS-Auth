@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lectures</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Lectures</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Instructor</th>
+            <th>Date</th>
+            <th>Duration</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over lectures and display each row -->
+        <tr th:each="lecture : ${lectures}">
+            <td th:text="${lecture.id}"></td>
+            <td th:text="${lecture.title}"></td>
+            <td th:text="${lecture.professor.name}"></td>
+            <td th:text="${lecture.date}"></td>
+            <td th:text="${lecture.duration}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
